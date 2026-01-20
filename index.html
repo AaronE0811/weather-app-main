@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Weather app</title>
+  <link rel="stylesheet" href="./index.css">
+
+
+</head>
+
+<body>
+
+  <header>
+    <div class="name">
+      <img id="logo" src="./assets/images/logo.svg" alt="">
+    </div>
+
+    <div class="dropdown-containerHeader">
+      <button id="btnUnits"><img id="confi" src="./assets/images/icon-units.svg" alt="">
+        <span id="selectedConfig">Units</span>
+        <img src="./assets/images/icon-dropdown.svg" alt="">
+      </button>
+      <div id="dropdownMenuHeader" class="dropdown-contentHeader">
+
+        <div class="menu-title">Switch to Imperial</div>
+
+        <div class="menu-section">
+          <p class="section-label">Temperature</p>
+          <a href="#" class="unit-option active" data-unit="celsius">Celsius (°C) <span class="check">✓</span></a>
+          <a href="#" class="unit-option" data-unit="fahrenheit">Fahrenheit (°F) <span class="check">✓</span></a>
+        </div>
+
+        <div class="menu-section">
+          <p class="section-label">Wind Speed</p>
+          <a href="#" class="unit-option active" data-unit="kmh">km/h <span class="check">✓</span></a>
+          <a href="#" class="unit-option" data-unit="mph">mph <span class="check">✓</span></a>
+        </div>
+
+        <div class="menu-section">
+          <p class="section-label">Precipitation</p>
+          <a href="#" class="unit-option active" data-unit="mm">Millimeters (mm) <span class="check">✓</span></a>
+          <a href="#" class="unit-option" data-unit="inch">Inches (inch) <span class="check">✓</span></a>
+        </div>
+
+
+      </div>
+    </div>
+  </header>
+  <nav>
+    <h1 id="title">How's the sky looking today?</h1>
+    <div class="search">
+      <img src="./assets/images/icon-search.svg" id="logoSearch" alt="">
+      <input type="search" id="searchInput" placeholder="Search for a places ...">
+      <button type="button" id="searchBtn">Search</button>
+    </div>
+  </nav>
+  <main id="mainContainer">
+    <section class="contenedor">
+
+
+      <div class="weather-info">
+        <div class="datos">
+          <div class="ciudad">berlin, Germany</div>
+          <div class="fecha">12/25/25</div>
+        </div>
+        <div class="grados">
+          <img id="IconState" src="./assets/images/icon-sunny.webp" alt="">
+          <h1 id="gradosC">20°</h1>
+        </div>
+      </div>
+
+
+      <div class="detallesWeather">
+        <div class="feels">
+          <p id="feels">Feels Like</p>
+          <p id="gradoFeels">12°</p>
+        </div>
+        <div class="humidity">
+          <p id="humidity">humidity</p>
+          <p id="gradoHumidity">80%</p>
+        </div>
+        <div class="wind">
+          <p id="wind">wind</p>
+          <p id="gradoWind">7 km/h</p>
+        </div>
+        <div class="precipitation">
+          <p id="precipitation">precipitation</p>
+          <p id="gradoPrecipitation">20mm</p>
+        </div>
+      </div>
+
+
+
+      <div class="days">
+        <p id="forecast">Daily Forecast</p>
+        <div class="contenedorDia"></div>
+      </div>
+
+      <div class="hourly">
+        <div id="titleHourly">
+          <p id="hourly">Hourly Forecast</p>
+          <div class="dropdown-container">
+            <button id="DayHourly">
+              <span id="selectedDay">Tuesday</span>
+              <img src="./assets/images/icon-dropdown.svg" alt="">
+            </button>
+
+            <div id="dropdownMenu" class="dropdown-content">
+              <a href="#" class="day-option">#</a>
+              <a href="#" class="day-option">#</a>
+              <a href="#" class="day-option">#</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="contenedorhourly">
+          <div class="hourlyDays">
+            <img id="logoStates" src="./assets/images/icon-snow.webp" alt="">
+            <div id="hour">2:00 PM</div>
+            <div id="tempHour">20°</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <div id="errormessage"></div>
+
+
+  <script src="./index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,676 @@
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    src: url('./assets/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz\,wdth\,wght.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+h1,
+h2,
+h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    color: hsl(0, 0%, 100%);
+}
+
+button {
+    cursor: pointer;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: hsl(243, 96%, 9%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 6rem;
+    margin-bottom: 3rem;
+}
+
+nav {
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-size: 24px;
+}
+
+#btnUnits {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem;
+    background-color: hsl(243, 23%, 24%);
+    border: none;
+    border-radius: 7px;
+    color: hsl(0, 0%, 100%);
+}
+
+.search {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+#logoSearch {
+    position: absolute;
+    left: 1rem;
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    outline: none;
+    border-radius: 7px;
+    background-color: hsl(243, 23%, 24%);
+    border: none;
+    color: white;
+}
+
+#searchBtn {
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 7px;
+    font-family: 'DM Sans', sans-serif;
+    background-color: hsl(233, 67%, 56%);
+    color: hsl(0, 0%, 100%);
+    font-size: 14px;
+}
+
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr)350px;
+    grid-template-rows: auto auto auto;
+    gap: 2rem;
+    width: 100%;
+    padding: 1rem;
+}
+
+.weather-info {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    background-image: url(./assets/images/bg-today-large.svg);
+    background-size: cover;
+    border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detallesWeather {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.days {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: hsl(0, 0%, 100%);
+}
+
+.contenedorDia {
+    display: flex;
+    justify-content: flex-start;
+    gap: 12px;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+#stateIconDays {
+    width: 50px;
+    height: 50px;
+}
+
+#days {
+    background-color: hsl(243, 23%, 24%);
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    min-width: 100px;
+    flex-shrink: 0;
+}
+
+.hourly {
+    grid-column: 3;
+    grid-row: 1 / span 3;
+    background-color: hsl(243, 23%, 24%);
+    border-radius: 20px;
+    padding: 20px;
+    color: hsl(0, 0%, 100%);
+}
+
+
+/*ciudad
+*/
+.ciudad {
+    font-size: 30px;
+    font-weight: 700;
+    color: hsl(0, 0%, 100%);
+}
+
+.fecha {
+    font-size: 18px;
+    color: hsl(0, 0%, 100%);
+    opacity: 0.7;
+    margin-top: 1rem;
+}
+
+.grados {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+#IconState {
+    width: 100px;
+    height: 100px;
+}
+
+/*segunda fila*/
+.feels,
+.wind,
+.humidity,
+.precipitation {
+    background-color: hsl(243, 23%, 24%);
+    padding: 1rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: hsl(0, 0%, 100%);
+}
+
+#gradoFeels,
+#gradoHumidity,
+#gradoWind,
+#gradoPrecipitation {
+    font-size: 30px;
+}
+
+#wind,
+#precipitation,
+#humidity,
+#feels {
+    color: hsl(0, 0%, 100%);
+    opacity: 0.7;
+}
+
+.gradoDays {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    color: hsl(0, 0%, 100%);
+}
+
+
+#titleHourly {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#DayHourly {
+    background: hsl(243, 23%, 30%);
+    border: none;
+    color: hsl(0, 0%, 100%);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.5rem;
+    border-radius: 7px;
+}
+
+.hourlyDays {
+    display: flex;
+    flex-direction: column;
+    /* Una debajo de otra */
+    gap: 15px;
+    background-color: hsl(243, 23%, 30%);
+    margin-top: 1rem;
+    border-radius: 7px;
+    padding: 1rem;
+    height: 450px;
+    /* Ajusta según el alto de tu diseño */
+    overflow-y: auto;
+    /* IMPORTANTE: Crea el scroll vertical */
+}
+
+
+.hourly-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 5px;
+}
+
+.cardDay {
+    display: flex;
+    flex-direction: column;
+    width: 6rem;
+    background-color: hsl(243, 23%, 30%);
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 10px;
+    font-size: 16px;
+
+}
+
+.dia-temps {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.dia-nombre {
+    margin-bottom: 1rem;
+}
+
+.dia-icono {
+    width: 40px;
+    height: 40px;
+}
+
+#logoStates {
+    width: 40px;
+    height: 40px;
+}
+
+#hour {
+    margin-right: auto;
+}
+
+#tempHour {
+    padding-right: 10px;
+}
+
+#forecast {
+    margin-bottom: 1rem;
+
+}
+
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: hsl(243, 23%, 24%);
+}
+
+.show {
+    display: block;
+}
+
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: hsl(243, 23%, 30%);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-containerHeader {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-contentHeader {
+    display: none;
+    position: absolute;
+    left: -70px;
+    top: 50px;
+    background-color: hsl(243, 23%, 24%);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dropdown-contentHeader a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-contentHeader a:hover {
+    background-color: hsl(243, 23%, 24%);
+}
+
+.show {
+    display: block;
+}
+
+.day-option {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.day-option:hover {
+    background-color: #334155;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/*units*/
+
+#dropdownMenuHeader {
+    flex-direction: column;
+    padding: 1rem;
+    font-size: 16px;
+    width: 250px;
+    color: white;
+    align-items: start;
+}
+
+.menu-title {
+    margin-bottom: 1rem;
+    background-color: hsl(243, 23%, 30%);
+    padding: 0.5rem;
+    border-radius: 7px;
+
+    outline: none; 
+    box-shadow: 0 0 0 3px hsla(0, 0%, 100%, 0.5);
+    border: 1px solid hsl(0, 0%, 100%); 
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-section {
+    border-bottom: 3px solid hsl(243, 23%, 30%);
+    margin-bottom: 1rem;
+
+}
+
+.section-label {
+    color: hsl(240, 6%, 70%);
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+}
+
+
+.unit-option.active {
+    background-color: hsl(243, 23%, 30%);
+    border-radius: 8px;
+    margin: 0 5px;
+}
+.unit-option .check {
+    display: none;
+}
+
+.unit-option.active .check {
+    display: inline;
+    float: right;
+
+}
+
+button img {
+    z-index: 0;
+}
+input:focus, 
+button:focus {
+    outline: none; 
+    box-shadow: 0 0 0 3px hsla(0, 0%, 100%, 0.5);
+    border: 1px solid hsl(0, 0%, 100%); 
+    transition: all 0.2s ease-in-out;
+}
+
+@media (max-width: 800px) {
+    header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        margin-bottom: 3rem;
+        align-items: center;
+    }
+
+    #btnUnits {
+        width: 110px;
+        font-size: 12px;
+    }
+
+    #logo {
+        width: 150px;
+    }
+
+    nav {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+        font-size: 24px;
+        width: 90%;
+    }
+
+    main {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    #logoSearch {
+        position: absolute;
+        left: 1rem;
+        width: 18px;
+        height: 18px;
+        pointer-events: none;
+        top: 14px;
+    }
+
+    #searchBtn {
+        width: 100%;
+    }
+
+    #title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .contenedor {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .weather-info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-image: url(./assets/images/bg-today-small.svg);
+    }
+
+    .datos {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .detallesWeather {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: space-between;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .days {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hourly {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cardDay {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .dia-temps {
+        width: 100%;
+    }
+
+    .contenedorDia {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body {
+        font-size: 12px;
+    }
+
+    .feels,
+    .wind,
+    .humidity,
+    .precipitation {
+
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        right: -5px;
+    }
+
+    .dropdown-contentHeader {
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: hsl(243, 23%, 24%);
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        border-radius: 8px;
+        overflow: hidden;
+        left: auto;
+    }
+
+    .dropdown-contentHeader.show {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .menu-section{
+        width: 100%;
+    }
+    .menu-title{
+        width: 100%;
+    }
+    
+    
+    .unit-option.active:hover {
+        background-color: hsl(243, 23%, 30%)!important; 
+    }
+    
+   
+
+}
+
